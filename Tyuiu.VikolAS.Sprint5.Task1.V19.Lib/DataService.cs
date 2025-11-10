@@ -17,20 +17,13 @@ namespace Tyuiu.VikolAS.Sprint5.Task1.V19.Lib
                 for (int x = startValue; x <= stopValue; x++)
                 {
                     double denom = 3.0 * x + 0.5;
-                    double fraction;
-                    if (Math.Abs(denom) < Double.Epsilon)
-                    {
-                        fraction = 0.0;
-                    }
-                    else
-                    {
-                        fraction = 2.0 / denom;
-                    }
+                    double fraction = Math.Abs(denom) < Double.Epsilon ? 0.0 : 2.0 / denom;
 
-                    // Формула: sin(x) + ( 2/(3x+0.5) - 2*cos(x)*2*x )
+                    // Формула: sin(x) + (2/(3x+0.5) - 2*cos(x)*2*x)
                     double y = Math.Sin(x) + (fraction - 2.0 * Math.Cos(x) * 2.0 * x);
 
-                    writer.WriteLine(y.ToString("F2", culture));
+                    // Формат: до 2 знаков, но без лишних нулей (напр. "4", "-4,6", "6,49")
+                    writer.WriteLine(y.ToString("0.##", culture));
                 }
             }
 
