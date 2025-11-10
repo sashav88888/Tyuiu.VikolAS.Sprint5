@@ -18,6 +18,7 @@ namespace Tyuiu.VikolAS.Sprint5.Task4.V21.Test
             DataService ds = new DataService();
             double result = ds.LoadFromDataFile(tempFile);
 
+
             // Вычисляем ожидаемый результат
             double expected = Math.Round(Math.Pow(2.5, 3) * Math.Cos(2.5) + 2 * 2.5, 3);
             Assert.AreEqual(expected, result);

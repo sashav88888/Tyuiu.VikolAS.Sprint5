@@ -13,6 +13,7 @@ namespace Tyuiu.VikolAS.Sprint5.Task4.V21
             double result = ds.LoadFromDataFile(tempPath);
 
             Console.WriteLine(result);
+
         }
     }
 }
