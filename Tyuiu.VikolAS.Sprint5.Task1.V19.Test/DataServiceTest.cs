@@ -10,15 +10,14 @@ namespace Tyuiu.VikolAS.Sprint5.Task1.V19.Test
     {
         [TestMethod]
         public void TestMethod1()
-
         {
             DataService ds = new DataService();
             string path = ds.SaveToFileTextData(-5, 5);
 
-            Assert.IsTrue(File.Exists(path));
+            Assert.IsTrue(File.Exists(path), "Файл с результатами не найден.");
 
             string[] lines = File.ReadAllLines(path);
-            Assert.AreEqual(11, lines.Length);
+            Assert.AreEqual(11, lines.Length, "Ожидалось 11 строк (от -5 до 5).");
         }
     }
 }
