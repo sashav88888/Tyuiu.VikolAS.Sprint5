@@ -10,6 +10,7 @@ namespace Tyuiu.VikolAS.Sprint5.Task1.V19
         {
             DataService ds = new DataService();
 
+
             Console.Title = "Спринт #5 | Выполнил: Викол А.С. | ИСПб-25-1 | Вариант 19";
             Console.WriteLine("*****************************************************************");
             Console.WriteLine("* Спринт #5                                                     *");

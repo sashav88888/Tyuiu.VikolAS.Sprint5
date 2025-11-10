@@ -14,16 +14,18 @@ namespace Tyuiu.VikolAS.Sprint5.Task1.V19.Lib
             {
                 for (int x = startValue; x <= stopValue; x++)
                 {
+                    double denominator = 3 * x + 0.5 - 2 * Math.Cos(x);
                     double y;
-                    double denominator = 3 * x + 0.5;
+
                     if (denominator == 0)
                     {
                         y = 0;
                     }
                     else
                     {
-                        y = (Math.Sin(x) + (2 / denominator) - 2 * Math.Cos(x)) * 2 * x;
+                        y = Math.Sin(x) + (2 / denominator) * 2 * x;
                     }
+
                     writer.WriteLine(Math.Round(y, 2));
                 }
             }
