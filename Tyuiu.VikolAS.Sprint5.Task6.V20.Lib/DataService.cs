@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
 using tyuiu.cources.programming.interfaces.Sprint5;
 
 namespace Tyuiu.VikolAS.Sprint5.Task6.V20.Lib
@@ -13,14 +14,17 @@ namespace Tyuiu.VikolAS.Sprint5.Task6.V20.Lib
 
             string text = File.ReadAllText(path);
 
-            // Разбиваем на слова
+            // Разделители слов
             char[] separators = new char[] { ' ', '\t', '\r', '\n' };
             string[] words = text.Split(separators, StringSplitOptions.RemoveEmptyEntries);
 
             int count = 0;
             foreach (var word in words)
             {
-                if (word.Length == 6)
+                // Убираем все небуквенные символы (знаки препинания)
+                string cleanWord = new string(word.Where(c => char.IsLetterOrDigit(c)).ToArray());
+
+                if (cleanWord.Length == 6)
                     count++;
             }
 

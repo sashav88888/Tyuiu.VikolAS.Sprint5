@@ -13,6 +13,7 @@ namespace Tyuiu.VikolAS.Sprint5.Task6.V20.Test
         {
             DataService ds = new DataService();
 
+
             // Создаем временный файл с тестовыми данными
             string tempPath = Path.Combine(Path.GetTempPath(), "TestFile.txt");
             File.WriteAllText(tempPath, "apple banana orange cherry melon grape");
